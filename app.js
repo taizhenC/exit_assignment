@@ -42,3 +42,41 @@ function getFiltered() {
 search.addEventListener("input", function() {
     render()
 });
+
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = form.elements["name"].value.trim();
+    const category = form.elements["category"].value.trim();
+    const caloriesText = form.elements["calories"].value.trim();
+    const calories = Number(caloriesText);
+
+    if(name === "" || category === "" || caloriesText === "") {
+        errorBox.textContent = "fill all";
+        return;
+    }
+
+    if(isNaN(calories) || calories < 0) {
+        errorBox.textContent = "Calories need to be positive"
+        return;
+    }
+
+    let newId = 1;
+    snacks.forEach(function(snack) {
+        if(snack.id >= newId) {
+            nmewId = snack.id + 1;
+        }
+    })
+
+
+    snacks.push({
+        id: newId,
+        name: name,
+        category: category,
+        calories: calories,
+        eaten: false
+    })
+
+    render(getFiltered());
+})
