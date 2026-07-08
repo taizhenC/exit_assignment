@@ -7,6 +7,10 @@ fetch("./data.json")
     })
     .then(function (data){
         snacks = data.snacks;
+        render(snacks);
+    })
+    .catch(function() {
+        errorBox.textContent = "fail to load"
     })
 
 
@@ -22,3 +26,7 @@ function render(items) {
         }
     })
 }
+
+search.addEventListener("input", function() {
+    render()
+});
