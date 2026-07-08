@@ -1,5 +1,11 @@
 let snacks = [];
 
+const list = document.getElementById("list")
+const search = document.getElementById("search")
+const form = document.getElementById("form")
+const errorBox = document.getElementById("error")
+
+
 
 fetch("./data.json")
     .then(function (response) {
