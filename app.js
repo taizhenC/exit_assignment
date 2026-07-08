@@ -27,6 +27,18 @@ function render(items) {
     })
 }
 
+function getFiltered() {
+    const term = search.value.trim().toLowerCase();
+
+    if(term ==="") {
+        return snacks;
+    }
+
+    return snacks.filter(function(snack) {
+        return snack.name.toLowerCase().indexOf(term) !== -1;
+    }) 
+}
+
 search.addEventListener("input", function() {
     render()
 });
