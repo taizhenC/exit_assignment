@@ -91,7 +91,6 @@ form.addEventListener("submit", function(event) {
         eaten: false
     })
 
-    form.requestFullscreen();
     errorBox.textContent = ""
 
     render(getFiltered());
