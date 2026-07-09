@@ -70,7 +70,7 @@ form.addEventListener("submit", function(event) {
         return;
     }
 
-    if(isNaN(calories) || calories < 0) {
+    if(isNaN(calories) || calories <= 0) {
         errorBox.textContent = "Calories need to be positive"
         return;
     }
@@ -90,6 +90,9 @@ form.addEventListener("submit", function(event) {
         calories: calories,
         eaten: false
     })
+
+    form.requestFullscreen();
+    errorBox.textContent = ""
 
     render(getFiltered());
 })
