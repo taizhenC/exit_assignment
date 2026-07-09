@@ -1,0 +1,46 @@
+body {
+    max-width: 400px;
+    margin: 20px auto;
+    padding:0 15px;
+}
+
+h1 {
+    color: black;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#error {
+    color: red
+}
+
+#search {
+    margin: 15px 0;
+}
+
+#list {
+    padding: 0;
+}
+
+#list li {
+    border: 1px #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.eaten {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

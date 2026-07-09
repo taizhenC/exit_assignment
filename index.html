@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack Tracker</title>
+    <link  rel = "stylesheet" href = "style.css"/>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+
+    <header>
+        <h1> Snack Tracker</h1>
+        <p> Search the snack</p>
+    </header>
+
+    <main>
+        <form id="form">
+            <div class="field">
+                <label for="name-input">Name</label>
+                <input id="name-input" name="name" type="text" />
+            </div>
+
+            <div class="field">
+                <label for="category-input">Category</label>
+                <input id="category-input" name="category" type="text" />
+            </div>
+
+            <div class="field">
+                <label for="calories-input">Calories</label>
+                <input id="calories-input" name="calories" type="number" />
+            </div>
+
+            <button type="submit">Add snack</button>
+        </form>
+
+        <p id="error"></p>
+
+        <label for="search">Search snacks</label>
+        <input id="search" type="text" placeholder="Type-search" />
+
+        <ul id="list"></ul>
+    </main>
+  </body>
+</html>
