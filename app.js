@@ -21,7 +21,7 @@ fetch("./data.json")
 
 
 function render(items) {
-    List.innerHTML = "";
+    list.innerHTML = "";
 
     items.forEach(function (snack) {
         const li = document.createElement("li");
@@ -30,6 +30,13 @@ function render(items) {
         if(snack.eaten) {
             li.classList.add("eaten");
         }
+
+        li.addEventListener("click", function() {
+            snack.eaten = !snack.eaten;
+            li.classList.toggle("eaten");
+        })
+
+        list.appendChild(li);
     })
 }
 
@@ -46,7 +53,7 @@ function getFiltered() {
 }
 
 search.addEventListener("input", function() {
-    render()
+    render(getFiltered());
 });
 
 
@@ -71,7 +78,7 @@ form.addEventListener("submit", function(event) {
     let newId = 1;
     snacks.forEach(function(snack) {
         if(snack.id >= newId) {
-            nmewId = snack.id + 1;
+            newId = snack.id + 1;
         }
     })
 
